@@ -258,6 +258,7 @@ public class IDESolver<N,D,M,V,I extends InterproceduralCFG<N, M>> {
 			executor.awaitCompletion();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
+			Thread.currentThread().interrupt();
 		}
 		Throwable exception = executor.getException();
 		if(exception!=null) {
